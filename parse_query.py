@@ -9,6 +9,6 @@ def parseQuery(q):
 	keywords = [w[0] for w in posTags if w[1] in keepTags]
 	stems = keywords
 	for i in range(len(stems)):
-		stems[i] = PorterStemmer().stem_word(stems[i])
+		stems[i] = PorterStemmer().stem_word(stems[i]).encode('utf-8')
 	return stems
 

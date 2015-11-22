@@ -21,9 +21,9 @@ def scoreDoc(keywordList, doc, doclist):
 
 def rankDocs(keywordList, doclistTuples):
 	scores = {}
-	docList = [tb(doc[1]) for doc in doclistTuples]
+	docList = [tb(doc[1].decode('utf-8')) for doc in doclistTuples]
 	for doc in doclistTuples:
-		scores[doc[0]] = scoreDoc(keywordList, tb(doc[1]), docList)
+		scores[doc[0]] = scoreDoc(keywordList, tb(doc[1].decode('utf-8')), docList)
 
 	sortedDocs = sorted(scores.items(), key=lambda x: x[1], reverse = True)
 	return sortedDocs[:10]
