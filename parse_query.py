@@ -3,7 +3,7 @@ from nltk import PorterStemmer
 
 #takes a string as a query, returns list of keywords
 def parseQuery(q):
-	blob = tb(q)
+	blob = tb(q.lower())
 	posTags = blob.tags
 	keepTags = ['NNP', 'NNPS', 'NN', 'NNS', 'JJ', 'JJR', 'JJS', 'CD']
 	keywords = [w[0] for w in posTags if w[1] in keepTags]
