@@ -22,7 +22,6 @@ def scoreDoc(keywordList, doc, doclist):
 def rankDocs(keywordList, doclistTuples):
 	scores = {}
 	docList = [tb(doc[1]) for doc in doclistTuples]
-	print docList
 	for doc in doclistTuples:
 		scores[doc[0]] = scoreDoc(keywordList, tb(doc[1]), docList)
 
